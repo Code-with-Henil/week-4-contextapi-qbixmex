@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App.tsx';
-import { CustomThemeContext } from './contexts/ThemeContext.tsx';
+import { ThemeProvider } from './contexts/ThemeContext.tsx';
 import './index.css';
 
 import '@fontsource/roboto/300.css';
@@ -12,8 +12,8 @@ import '@fontsource/roboto/700.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <CustomThemeContext>
+    <ThemeProvider>
       <App />
-    </CustomThemeContext>
+    </ThemeProvider>
   </React.StrictMode>,
 );

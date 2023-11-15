@@ -14,7 +14,9 @@ const darkTheme = createTheme({
       main: amber[500],
     },
     success: {
+      light: green[200],
       main: green[500],
+      dark: green[300],
     },
     error: {
       main: red[500],
