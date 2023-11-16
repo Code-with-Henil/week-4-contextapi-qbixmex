@@ -25,3 +25,7 @@ Create a React SPA with Context API, where you manage `currentCurrency` inside y
 4. Design a simple component that displays the current currency from your context. UI is your choice completely. Minimum Requirement is to design a `seperate React Component` and render the currency there.
 
 5. Bonus: Context Nesting: If you want to practice context nesting, you can add another context for managing themes `(Light & Dark)` alongside the currency context.
+
+## Video
+![currency-exchange](https://github.com/Code-with-Henil/week-4-contextapi-qbixmex/assets/70177108/ca74da68-4764-46d1-9137-ff4a9a4a7acb)
+
