@@ -17,7 +17,6 @@ const CurrencySelector = () => {
     if (currency === 'usd') {
       dispatch({ type: CurrencyCodes.USD, payload: Number(mxn) });
     }
-    setMXN('');
   };
 
   return (
