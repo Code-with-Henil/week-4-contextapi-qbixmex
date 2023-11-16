@@ -1,38 +1,31 @@
-import React, { Dispatch, FC, ReactNode } from "react";
+import React, { Dispatch, FC, ReactNode, useReducer } from "react";
+import currencyReducer, { Action, CurrencyCodes } from "./CurrencyReducer";
 
 export type Exchange = {
-  from: number;
-  to: number;
+  currency: CurrencyCodes;
+  usd: number;
+  cad: number;
   result: number;
 };
 
 type CurrencyContextType = {
-  exchange: Exchange,
-  setExchange: Dispatch<Exchange>;
-  convertExchange: () => void;
+  exchange: Exchange;
+  dispatch: Dispatch<Action>;
 };
 
 const CurrencyContext = React.createContext<CurrencyContextType>({} as CurrencyContextType);
 
 const CurrencyProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
-  const [ exchange, setExchange ] = React.useState<Exchange>({
-    from: 0,
-    to: 0,
+  const [ exchange, dispatch ] = useReducer(currencyReducer, {
+    currency: CurrencyCodes.USD,
+    usd: 17.32,
+    cad: 12.66,
     result: 0,
   });
 
-  const convertExchange = () => {
-    setExchange((prev) => {
-      return {
-        ...prev,
-        result: prev.from * prev.to,
-      };
-    });
-  };
-
   return (
-    <CurrencyContext.Provider value={{ exchange, setExchange, convertExchange }}>
+    <CurrencyContext.Provider value={{ exchange, dispatch }}>
       {children}
     </CurrencyContext.Provider>
   );

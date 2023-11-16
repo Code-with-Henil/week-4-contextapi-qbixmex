@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import ExchangeForm from "../components/ExchangeForm";
-import DisplayExchange from "../components/DisplayExchange";
+import DisplayCurrency from "../components/DisplayCurrency";
+import CurrencySelector from "../components/CurrencySelector";
 import { CurrencyProvider } from "../contexts/CurrencyContext";
 
 const HomePage = () => {
@@ -22,8 +22,8 @@ const HomePage = () => {
       </Typography>
 
       <CurrencyProvider>
-        <ExchangeForm />
-        <DisplayExchange />
+        <CurrencySelector />
+        <DisplayCurrency />
       </CurrencyProvider>
     </Box>
   );

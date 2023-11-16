@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import PublicLayout from "../layouts/public.layout";
 import NotFoundPage from "../pages/not-found.page";
-import HomePage from "../pages/Home.page";
+import HomePage from "../pages/home.page";
 
 const publicRoutes = createBrowserRouter([
   {

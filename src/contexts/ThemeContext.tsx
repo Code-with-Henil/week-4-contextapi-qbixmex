@@ -15,7 +15,7 @@ const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
-  )
+  );
 
 };
 
