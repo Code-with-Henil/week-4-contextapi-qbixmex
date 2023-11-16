@@ -5,21 +5,21 @@ type ThemeContextType = {
   setTheme: Dispatch<string>;
 };
 
-const ThemeProvider = React.createContext<ThemeContextType>({} as ThemeContextType);
+const ThemeContext = React.createContext<ThemeContextType>({} as ThemeContextType);
 
-const CustomThemeContext: FC<{ children: ReactNode }> = ({ children }) => {
+const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const [ theme, setTheme ] = React.useState('dark');
 
   return (
-    <ThemeProvider.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
-    </ThemeProvider.Provider>
-  )
+    </ThemeContext.Provider>
+  );
 
 };
 
 export {
-  ThemeProvider as ThemeContext,
-  CustomThemeContext,
+  ThemeProvider,
+  ThemeContext,
 };
